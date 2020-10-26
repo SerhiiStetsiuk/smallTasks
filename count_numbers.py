@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 with open('numbers1.txt', 'r') as inputeFile:
-    content = inputeFile.read()
-    contents = content.split()
-    
-    mean = 0
-    for i in contents:
-        number = float(i)
-        mean = mean + number
-    print(mean)
+    sum = 0
+    for line in inputeFile:
+        if not line.startswith("#"):
+            contents = line.split()
+            for l in contents:
+                number = float(l)
+                sum = sum + number      
+    print("summa = ", sum)
